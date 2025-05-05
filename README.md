@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 NodeMS – Linux Server Pool Management System
 
-## Getting Started
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/nodems-io/admin/pulls)
+![Next.js](https://img.shields.io/badge/Next.js-14+-black?logo=nextdotjs)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-blue?logo=tailwindcss)
+![TypeScript](https://img.shields.io/badge/TypeScript-Enabled-blue?logo=typescript)
+![Status](https://img.shields.io/badge/status-WIP-orange)
 
-First, run the development server:
+> NodeMS is a next-generation open-source **server farm management platform** for Linux environments.  
+> Built with **Next.js App Router**, it helps system administrators track, visualize and interact with their infrastructure — fast, modern, and responsive.
+
+---
+
+## ✨ Features
+
+- 🧭 **Dashboard Overview** – server stats, alerts, uptime chart
+- 💼 **Server Cards** – shows OS, name, datacenter, and IP
+- 🌐 **i18n Support** – Turkish 🇹🇷 & English 🇬🇧 via dynamic `[locale]` routes
+- 🔔 **Notification Dropdown** – real-time alerts UI
+- 👤 **User Avatar Menu** – placeholder profile support
+- 📈 **Interactive Charts** – uptime, usage, and future logs
+- 📱 **Fully Responsive** – mobile-first design
+- 🧩 **Composable Components** – sidebar, topbar, cards via `shadcn/ui`
+
+---
+
+## 📸 Preview
+
+![Dashboard Preview](https://raw.githubusercontent.com/atak011/nodems/main/public/preview.png)
+
+---
+
+## 🛠️ Tech Stack
+
+| Tool           | Usage                              |
+|----------------|-------------------------------------|
+| [Next.js](https://nextjs.org) | App Router + SSR/CSR Framework |
+| [Tailwind CSS](https://tailwindcss.com) | Styling |
+| [shadcn/ui](https://ui.shadcn.dev) | Component system |
+| [Lucide Icons](https://lucide.dev) | Icon set |
+| [Recharts](https://recharts.org) | Data visualization |
+| TypeScript     | Static typing                       |
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+git clone https://github.com/your-username/nodems.git
+cd nodems
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📍 Visit: [http://localhost:3000/tr](http://localhost:3000/tr)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌍 Localization (i18n)
 
-## Learn More
+NodeMS uses **route-based localization** instead of deprecated `i18n` config:
 
-To learn more about Next.js, take a look at the following resources:
+```
+/[locale]/dashboard
+         ├── /tr → Turkish
+         └── /en → English
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Translation keys are in `src/locales/` and accessed via `getT(locale)` utility.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧪 Development Details
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- ✅ Layout components (`Sidebar`, `Topbar`) live in `[locale]/layout.tsx`
+- ✅ Pages are shared across locales (`[locale]/nodes/page.tsx`)
+- ✅ Translations injected from `JSON` with type-safe fallback
+- ✅ Uptime chart uses static data via `recharts` (switchable to API)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📈 Roadmap
+
+- [ ] API backend for live server status
+- [ ] Authentication & session
+- [ ] Role-based access control (RBAC)
+- [ ] WebSocket real-time metrics
+- [ ] Theme toggle (Light / Dark)
+- [ ] Docker & deployment pipeline
+- [ ] Sentry or GlitchTip integration
+
+---
+
+## 🤝 Contributing
+
+Contributions, ideas, and bug reports are welcome!
+
+```bash
+git checkout -b feature/your-feature
+git commit -m "Add: Your feature"
+git push origin feature/your-feature
+```
+
+Then open a [pull request](https://github.com/nodems-io/admin/pulls).
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](LICENSE).
+
+---
+
+## 👨‍💻 Author
+
+**Recai Atak**  
+[github.com/atak011](https://github.com/atak011)
+
+> Created with 💙 using Open Source tools.
