@@ -27,12 +27,12 @@ export function Topbar() {
         <LanguageSwitch />
 
         <Popover>
-        <PopoverTrigger asChild>
-  <Button variant="ghost" size="icon" className="relative">
-    <Bell size={20} />
-    <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full animate-pulse" />
-  </Button>
-</PopoverTrigger>
+          <PopoverTrigger asChild>
+            <Button variant="ghost" size="icon" className="relative">
+              <Bell size={20} />
+              <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full animate-pulse" />
+            </Button>
+          </PopoverTrigger>
 
           <PopoverContent className="w-80">
             <h4 className="font-semibold mb-2">Bildirimler</h4>
