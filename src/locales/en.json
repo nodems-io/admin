@@ -1,5 +1,8 @@
 {
   "dashboard": "Dashboard",
   "servers": "Servers",
-  "settings": "Settings"
+  "settings": "Settings",
+  "activeServers":"Active Servers",
+  "deactiveServers":"Deactive Servers",
+  "addServer":"Add Server"
 }

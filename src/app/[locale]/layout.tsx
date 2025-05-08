@@ -6,22 +6,23 @@ import AuthGuard from "@/components/AuthGuard";
 import { usePathname } from "next/navigation";
 
 export default function LocaleLayout({
-                                         children,
-                                     }: {
-    children: React.ReactNode;
+  children,
+}: {
+  children: React.ReactNode;
 }) {
-    const pathname = usePathname();
-    const isAuthFree = pathname?.endsWith("/login") || pathname?.endsWith("/register");
+  const pathname = usePathname();
+  const isAuthFree =
+    pathname?.endsWith("/login") || pathname?.endsWith("/register");
 
-    return (
-        <AuthProvider>
-            {isAuthFree ? (
-                children
-            ) : (
-                <AuthGuard>
-                    <MainLayout>{children}</MainLayout>
-                </AuthGuard>
-            )}
-        </AuthProvider>
-    );
+  return (
+    <AuthProvider>
+      {isAuthFree ? (
+        children
+      ) : (
+        <AuthGuard>
+          <MainLayout>{children}</MainLayout>
+        </AuthGuard>
+      )}
+    </AuthProvider>
+  );
 }
