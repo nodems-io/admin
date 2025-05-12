@@ -2,5 +2,8 @@
 {
   "dashboard": "Gösterge Paneli",
   "servers": "Sunucular",
-  "settings": "Ayarlar"
+  "settings": "Ayarlar",
+  "activeServers":"Aktif Sunucular",
+  "deactiveServers":"Kapalı Sunucular",
+  "addServer":"Sunucu Ekle"
 }

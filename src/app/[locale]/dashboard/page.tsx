@@ -1,5 +1,8 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Server, AlertTriangle, Clock } from "lucide-react";
+import {CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis} from "recharts";
 
 export default function DashboardPage() {
     return (
@@ -41,9 +44,26 @@ export default function DashboardPage() {
             <Card>
                 <CardContent className="py-6">
                     <div className="text-sm text-gray-500 mb-2">Haftalık Uptime Grafiği</div>
-                    <div className="h-48 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-sm">
-                        (Buraya uptime grafiği bileşeni eklenecek)
+                    <div className="h-64">
+                        <ResponsiveContainer width="100%" height="100%">
+                            <LineChart data={[
+                                {day: "Pzt", uptime: 99.8},
+                                {day: "Sal", uptime: 99.2},
+                                {day: "Çar", uptime: 98.6},
+                                {day: "Per", uptime: 99.4},
+                                {day: "Cum", uptime: 97.9},
+                                {day: "Cmt", uptime: 96.5},
+                                {day: "Paz", uptime: 98.7},
+                            ]}>
+                                <CartesianGrid strokeDasharray="3 3"/>
+                                <XAxis dataKey="day"/>
+                                <YAxis domain={[95, 100]} tickFormatter={(val) => `${val}%`}/>
+                                <Tooltip/>
+                                <Line type="monotone" dataKey="uptime" stroke="#3b82f6" strokeWidth={2} dot={{r: 3}}/>
+                            </LineChart>
+                        </ResponsiveContainer>
                     </div>
+
                 </CardContent>
             </Card>
 
