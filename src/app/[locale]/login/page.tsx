@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import api from "@/lib/api-client";
 import Link from "next/link";
 import Cookies from "js-cookie";
@@ -9,7 +8,6 @@ import {toast} from "sonner";
 import {useLocaleRouter} from "@/lib/use-locale-router";
 
 export default function LoginPage() {
-    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { push } = useLocaleRouter();
@@ -27,7 +25,7 @@ export default function LoginPage() {
 
             push("/dashboard");
         } catch (err) {
-            toast.error('Login Failed')
+            toast.error('Login Failed : '+err)
         }
     };
 

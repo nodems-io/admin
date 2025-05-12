@@ -14,7 +14,7 @@ export default function RegisterPage() {
             await api.post("/register", { email, password });
             router.push("/login");
         } catch (err) {
-            alert("Register failed");
+            alert("Register failed : "+err);
         }
     };
 

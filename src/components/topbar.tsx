@@ -6,7 +6,7 @@ import {
   PopoverContent,
 } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { Bell, Search } from "lucide-react";
+import { Bell } from "lucide-react";
 import { LanguageSwitch } from "@/components/language-switch";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
