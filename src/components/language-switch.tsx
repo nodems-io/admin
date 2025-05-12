@@ -14,7 +14,6 @@ export function LanguageSwitch() {
 
     const segments = pathname.split("/").filter(Boolean);
     const currentLocale = segments[0] === "en" || segments[0] === "tr" ? segments[0] : "tr";
-    const otherLocale = currentLocale === "tr" ? "en" : "tr";
 
     const switchLocale = (locale: "tr" | "en") => {
         const newPath = "/" + [locale, ...segments.slice(1)].join("/");
